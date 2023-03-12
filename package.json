@@ -1,0 +1,28 @@
+{
+  "name": "assignment_webelight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Btu1997/Assignment_webelight.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Btu1997/Assignment_webelight/issues"
+  },
+  "homepage": "https://github.com/Btu1997/Assignment_webelight#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.21",
+    "swagger-ui-express": "^4.6.2"
+  }
+}
