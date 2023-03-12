@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 const productSchema = new mongoose.Schema({
-        title:{
+        name:{
             type:String, 
             required:true,
             unique:true,
@@ -13,21 +13,16 @@ const productSchema = new mongoose.Schema({
             required:true,
             trim:true
         },
+        category:{
+            type : String,
+            enum: ["cloths","shoes","caps","beauty","electronics"],
+            trim: true
+        },
         price: {
             type:Number,
             required:true,
             trim:true
         },
-        currencyId: {
-            type:String, 
-            required:true,
-            trim:true
-        }, 
-        productImage: {
-            type:String, 
-            required:true,
-            trim:true
-        }, 
         style:{
             type:String, 
             trim:true
@@ -36,10 +31,6 @@ const productSchema = new mongoose.Schema({
             type:[String], 
             enum:["S", "XS","M","X", "L","XXL", "XL"],
             trim:true   
-        }, 
-        installments: {
-            type:Number, 
-            trim:true
         }, 
         deletedAt: {
             type:String

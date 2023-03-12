@@ -1,6 +1,6 @@
 const mongoose= require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
     fname: {
         type:String, 
         required:true,
@@ -29,14 +29,13 @@ const userSchema = new mongoose.Schema({
         unique:true,
         trim:true
     }, 
+   empId: {
+    type : String,
+    requred: true,
+    unique: true
+    }
    
-    address: {
-     
-        street: {type:String,required:true,trim:true},
-        city: {type:String,required:true,trim:true},
-        pincode: {type:Number,required:true,trim:true}
-  }
 },{timestamps:true})
 
 
-module.exports = mongoose.model("user", userSchema)
+module.exports = mongoose.model("admin", adminSchema)
