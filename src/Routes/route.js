@@ -5,7 +5,7 @@ const { authentication } = require("../MiddleWare/auth")
 
 const { createUser,loginUser,getUserDetailsById,updateUser } = require('../Controllers/userController')
 const {createAdmin,loginAdmin,getAllUsers} = require("../Controllers/adminController")
-const {createProduct}= require("../Controllers/productController")
+const {createProduct,getProducts,updateProduct,deleteProductById}= require("../Controllers/productController")
 //////////////////////User Api//////////////////////////////////////////////////////////////////
 router.post("/register", createUser);
 router.post("/login", loginUser);
@@ -21,7 +21,10 @@ router.get("/users/:empId/usersDetails",authentication, getAllUsers )
 
 ////////////////////////////////////Product Api//////////////////////////////////////////////////////////
 
-router.post("/products/:empId",authentication,createProduct )
+router.post("/products/:empId",authentication,createProduct );
+router.get("/products", authentication,getProducts);
+router.put('/products/:empId/:productId',authentication, updateProduct)
+router.delete("/products/:empId/:productId",authentication, deleteProductById)
 
 router.all('/*/', async function (req, res) {
     return res.status(404).send({ status: false, message: "Page Not Found" })
